@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample=self.webpackChunksample||[]).push([[592],{4910:(s,u,a)=>{a.d(u,{c:()=>e});var e=(()=>{return(c=e||(e={}))[c.text=1]="text",c[c.mcq=2]="mcq",e;var c})()}}]);

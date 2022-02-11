@@ -1,3 +1,33 @@
 .text-center{
     text-align: center;
 }
+td > i{
+    font-size: 1.4rem !important;
+}
+.mt-5{
+    margin-top: 20px;
+}
+.xxlarge{
+    width: 10rem !important;
+    height: 10rem !important;
+    font-size: 2.5rem !important;
+    color: white;
+}
+.b-warning{
+    background: #F59E0B;
+}
+.b-danger{
+    background: #EF4444;
+}
+.b-success{
+    background: #22C55E;
+}
+.text-danger{
+    color: #EF4444;
+}
+.text-warning{
+    color: #F59E0B;
+}
+.text-success{
+    color: #22C55E;
+}
