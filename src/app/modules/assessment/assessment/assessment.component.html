@@ -1,42 +1,42 @@
 <p-card>
 <p-panel header="Assessment">
     <div *ngIf="notSubmitted">
-    <h5>Your Name</h5>
-    <div class="field">
-        <input id="username1" type="username" styleClass="w-full" class="w-full" pInputText/>    
+    <div>
+        <h5>Your Name<span class="text-danger">*</span></h5>
+        <div class="field">
+            <input id="username1" type="username" styleClass="w-full" class="w-full" pInputText/>    
+        </div>
     </div>
-
-    <h5>PAN Number</h5>
+    <div>
+    <h5>PAN Number<span class="text-danger">*</span></h5>
     <div class="field">
         <input id="pan" type="pan" class="w-full" pInputText/>    
     </div>
-
-    <h5>Garampani sanctuary is located at</h5>
-    <div class="field-radiobutton">
-        <p-radioButton name="city" value="Chicago" [(ngModel)]="city" inputId="city1"></p-radioButton>
-        <label for="city1">Junagarh, Gujarat</label>
     </div>
-    <div class="field-radiobutton">
-        <p-radioButton name="city" value="Los Angeles" [(ngModel)]="city" inputId="city2"></p-radioButton>
-        <label for="city2">Diphu, Assam</label>
+    <div *ngFor="let question of questions">
+        <h5>{{question.questionnaire}}</h5>
+        <div class="field-radiobutton" *ngFor="let option of question['options']">
+            <p-radioButton name="{{option.label}}" value="{{option.label}}" [(ngModel)]="answers[question.id]" inputId="{{question.id}}"></p-radioButton>
+            <label for="{{question.id}}">{{option.label}}</label>
+        </div>
     </div>
-    <div class="field-radiobutton">
-        <p-radioButton name="city" value="New York" [(ngModel)]="city" inputId="city3"></p-radioButton>
-        <label for="city3">Kohima, Nagaland</label>
-    </div>
-    <div class="field-radiobutton">
-        <p-radioButton name="city" value="San Francisco" [(ngModel)]="city" inputId="city4"></p-radioButton>
-        <label for="city4">Gangtok, Sikkim</label>
-    </div>
-
+    
+    <div>
+        <h5>Belongs From</h5>
+        <div class="field">
+            <input id="belongs" type="belongs" class="w-full" pInputText/>    
+        </div>
+        </div>
     <div class="w-full">
-        <button pButton pRipple type="button" label="Success" class="p-button-outlined p-button-success" (click)="showSubmit()"></button>
+        <button pButton pRipple type="button" label="Submit to get the Retention Probablity" class="p-button-outlined p-button-success" (click)="showSubmit()"></button>
         <!-- <button pButton pRipple type="button" label="Danger" class="ml-3 p-button-raised p-button-danger"></button> -->
     </div>
 </div>
 <div *ngIf="!notSubmitted">
     Assessment successfully submitted
-
+    <div class="mt-5">
+        <p-avatar label="{{probab}}" styleClass="xxlarge {{probab=='Low' ? 'b-danger' : probab=='Medium' ? 'b-warning' : 'b-success'}}" size="xxlarge" shape="circle"></p-avatar>
+    </div>
     <div class="mt-5">
         <button pButton pRipple type="button" label="Login" class="ml-3 p-button-raised p-button-info" (click)="onLogin()"></button>
     </div>

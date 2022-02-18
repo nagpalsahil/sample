@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
       user.userName = this.login.username;
       user.userId = 1;
       this.userContextService.setUser(user);
-      this.routeStateService.add('Dashboard', '/main/dashboard', null, true);   
+      this.routeStateService.add('Dashboard', '/main/user-list', null, true);   
     
       this.loaderService.hide();
     }

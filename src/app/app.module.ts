@@ -5,15 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-
 import { MenuService } from './service/app.menu.service';
 import { ConfigService } from './service/app.config.service';
 import { AuthGuard } from './core/guards/auth.gaurd';
 import { AppCommonModule } from './app.common.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { environment } from 'src/environments/environment';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { MasterComponent } from './modules/master/master.component';
 import { HeaderComponent } from './modules/master/header/header.component';
 import { FooterComponent } from './modules/master/footer/footer.component';

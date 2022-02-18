@@ -1,0 +1,38 @@
+<div class="grid">
+	<div class="col-12">
+		<div class="card">
+			<h5 class="mb-2">Customizable code section</h5>
+			<p-table [columns]="cols" [value]="questions" responsiveLayout="scroll">
+				<ng-template pTemplate="header" let-columns>
+					<tr>
+						<th *ngFor="let col of columns">
+							{{col.header}}
+						</th>
+						<th>Action</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-rowData let-columns="columns">
+					<tr>
+						<td *ngFor="let col of columns">
+							<span *ngIf="col.field=='questionType' && rowData[col.field]==1">Open Ended</span>
+							<span *ngIf="col.field=='questionType' && rowData[col.field]==2">MCQ</span>
+							<span *ngIf="col.field=='activeStatus' && rowData[col.field]">Active</span>
+							<span *ngIf="col.field=='activeStatus' && !rowData[col.field]">Deactive</span>
+							<span *ngIf="col.field=='options'">
+								<span *ngFor="let option of rowData['options']">
+									Weightage: {{option.weightage}} - Value: {{option.label}}<br>
+								</span>
+							</span>
+							<span *ngIf="col.field!='questionType' && col.field!='options' && col.field!='activeStatus'">{{rowData[col.field]}}</span>
+						</td>
+						<td>
+							<i class="{{rowData['activeStatus']? 'pi pi-eye-slash' : 'pi pi-eye'}}" pTooltip="{{rowData['activeStatus'] ? 'Deactive': 'Active'}}" (click)="onEnabled()"></i>&nbsp;
+							<i class="pi pi-pencil" pTooltip="Edit"></i>&nbsp;
+							<i class="pi pi-trash" pTooltip="Delete"></i>
+						</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+	</div>
+</div>

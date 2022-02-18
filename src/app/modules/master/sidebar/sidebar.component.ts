@@ -15,8 +15,8 @@ export class SidebarComponent implements OnInit {
       this.model = [
           {
               items: [
-                  {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/main/dashboard']},
-                  {label: 'Users',icon: 'pi pi-fw pi-list', routerLink: ['/main/user-list']}
+                  {label: 'SFM Candiidate data',icon: 'pi pi-fw pi-users', routerLink: ['/main/user-list']},
+                  {label: 'Code Section',icon: 'pi pi-fw pi-list', routerLink: ['/main/question-list']}
               ]
           }
       ];

@@ -5,7 +5,13 @@
         </div>
         <div class="col-12 xl:col-6" style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
             <div class="h-full w-full m-0 py-7 px-4" style="border-radius:53px; background: linear-gradient(180deg, var(--surface-50) 38.9%, var(--surface-0));">
-                <h2 class="text-center">Login</h2>
+                <div class="w-full md:w-10 mx-auto mt-5">
+                    <button pButton pRipple label="Attempt Assessment" class="w-full p-3 text-xl" (click)="onClickAssessment()"></button>
+                </div>
+                <p-divider align="center">
+                    <b>Or</b>
+                </p-divider>
+                <h5 class="text-center">Login</h5>
                 <div class="w-full md:w-10 mx-auto">
                     <label for="username" class="block text-900 text-xl font-medium mb-2">Email</label>
                     <input id="username" type="text" placeholder="Username" [(ngModel)]="login.username" pInputText class="w-full mb-3" style="padding:1rem;">
@@ -14,9 +20,8 @@
                     <p-password id="password" [(ngModel)]="login.password" placeholder="Password" [feedback]="false" styleClass="w-full mb-3"></p-password>
                     <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="onClickLogin()"></button>
                 </div>
-                <div class="w-full md:w-10 mx-auto mt-5">
-                    <button pButton pRipple label="Give Assessment" class="w-full p-3 text-xl" (click)="onClickAssessment()"></button>
-                </div>
+                
+                
             </div>
         </div>
     </div>

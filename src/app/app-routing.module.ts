@@ -15,14 +15,19 @@ const appRoutes: Routes = [
     {
         path: 'main', component: MasterComponent,
         children: [
-            {
-                path: 'dashboard', 
-                loadChildren: () => import('src/app/modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-                canActivate: [AuthGuard]
-            },
+            // {
+            //     path: 'dashboard', 
+            //     loadChildren: () => import('src/app/modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+            //     canActivate: [AuthGuard]
+            // },
             {
                 path: 'user-list', 
                 loadChildren: () => import('src/app/modules/user-list/user-list.module').then(m => m.UserListModule),
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'question-list', 
+                loadChildren: () => import('src/app/modules/question-list/question-list.module').then(m => m.QuestionListModule),
                 canActivate: [AuthGuard]
             }
         ],
